@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "805540810765",
+    "firebase_url": "https://pegasus-e2b2c.firebaseio.com",
+    "project_id": "pegasus-e2b2c",
+    "storage_bucket": "pegasus-e2b2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805540810765:android:304e75aa79b74224",
+        "android_client_info": {
+          "package_name": "com.test.bms.pegasus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805540810765-cjl5vn1gn8aosj5thqie2ajcl7stdncs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.test.bms.pegasus",
+            "certificate_hash": "463760ae8e3864dd545ac703b66bf130da7c6c61"
+          }
+        },
+        {
+          "client_id": "805540810765-03f35llgdqs1eehjpkl7cqa5e4tttkt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC12GvpH-nF8xbtXnHjGor1p9Ues6OhynE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805540810765-03f35llgdqs1eehjpkl7cqa5e4tttkt8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
