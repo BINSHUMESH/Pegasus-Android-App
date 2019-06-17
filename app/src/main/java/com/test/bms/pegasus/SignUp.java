@@ -11,16 +11,29 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
-    EditText name,email,password;
+    EditText email,password;
     FirebaseAuth mAuth;
     ViewGroup progressView;
     protected boolean isProgressShowing = false;
+    FirebaseFirestore db;
+
 
     public void showProgressingView() {
 
@@ -47,7 +60,7 @@ public class SignUp extends AppCompatActivity {
         }
         else
         {
-            Intent i=new Intent(SignUp.this,MainActivity.class);
+            Intent i=new Intent(SignUp.this,PersonalDetails.class);
             startActivity(i);
         }
     }
@@ -55,10 +68,9 @@ public class SignUp extends AppCompatActivity {
         Intent i = new Intent(SignUp.this, Login.class);
         startActivity(i);
     }
+
     public boolean validate() {
         boolean valid = true;
-
-        String tname=name.getText().toString();
         String temail = email.getText().toString();
         String tpassword = password.getText().toString();
 
@@ -75,20 +87,12 @@ public class SignUp extends AppCompatActivity {
         } else {
             password.setError(null);
         }
-
-        if (tname.isEmpty()) {
-            name.setError("Name cannot be Empty");
-            valid = false;
-        } else {
-            password.setError(null);
-        }
         return valid;
     }
 
     public void onClickSignUp(View view){
         showProgressingView();
         if(validate()) {
-            String tname = name.getText().toString();
             String temail = email.getText().toString();
             String tpassword = password.getText().toString();
             mAuth.createUserWithEmailAndPassword(temail, tpassword)
@@ -110,13 +114,16 @@ public class SignUp extends AppCompatActivity {
             UpdateUI(null);
         }
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        name=findViewById(R.id.Signup_name);
         email=findViewById(R.id.Signup_email);
         password=findViewById(R.id.Signup_password);
+
         mAuth=FirebaseAuth.getInstance();
+        db=FirebaseFirestore.getInstance();
     }
 }

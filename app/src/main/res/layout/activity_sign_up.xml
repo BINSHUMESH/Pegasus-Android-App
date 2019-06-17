@@ -26,21 +26,6 @@
             android:text="@string/pegasus"
             android:textColor="@color/LightPrimaryColor"
             android:textSize="70sp" />
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-        <EditText
-            android:id="@+id/Signup_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="textCapWords" />
-        </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -63,29 +48,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-
             <EditText
                 android:id="@+id/Signup_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
                 android:hint="@string/password"
                 android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>
 
+
         <Button
-            android:id="@+id/Login_b_login"
+            android:id="@+id/Signup_b_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
             android:background="@color/LightPrimaryColor"
             android:onClick="onClickSignUp"
             android:text="@string/sign_up" />
+
 
         <TextView
             android:id="@+id/Login_b_register"
@@ -93,6 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:onClick="onClicktextlogin"
             android:text="@string/already_registered_login"
             android:textSize="18sp" />

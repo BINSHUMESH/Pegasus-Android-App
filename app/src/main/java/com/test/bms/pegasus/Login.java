@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,7 +27,8 @@ public class Login extends AppCompatActivity {
     protected boolean isProgressShowing = false;
 
     public void showProgressingView() {
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         if (!isProgressShowing) {
             isProgressShowing = true;
             progressView = (ViewGroup) getLayoutInflater().inflate(R.layout.progressbar_layout, null);
@@ -37,6 +39,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void hideProgressingView() {
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         View v = this.findViewById(android.R.id.content).getRootView();
         ViewGroup viewGroup = (ViewGroup) v;
         viewGroup.removeView(progressView);

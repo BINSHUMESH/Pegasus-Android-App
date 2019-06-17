@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item android:title="Create Event"
+          android:id="@+id/createEvent"></item>
+    <item android:title="Join Event"
+        android:id="@+id/joinEvent"></item>
+    <item android:title="Your Profile"
+        android:id="@+id/yourProfile"></item>
     <item android:title="@string/log_out"
           android:id="@+id/logout"/>
 </menu>
