@@ -35,4 +35,12 @@
     <string name="country">Country</string>
     <string name="complete_registration">Complete Registration</string>
     <string name="state">State</string>
+    <string name="upper_age">Upper Age</string>
+    <string name="lower_age">Lower Age</string>
+    <string name="members_limit">Members Limit</string>
+    <string name="name_of_event_cricket">Name of Event(Cricket)</string>
+    <string name="name_of_event_ex_cricket">Name Of Event (Ex-:Cricket)</string>
+    <string name="event_date">Event Date</string>
+    <string name="choose_meeting_point_on_map">Choose Meeting Point On Map</string>
+    <string name="are_you_going_to_participate">Are you Going to Participate?</string>
 </resources>

@@ -35,8 +35,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     LocationManager locationManager;
     LocationListener locationListener;
-    List<Address> address=new ArrayList<>();
-    static ArrayList<String> arrayList=new ArrayList<>();
+
+    static Location meetingLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +81,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         mMap.setOnMapLongClickListener(this);
         Intent i = getIntent();
-        if (i.getIntExtra("key",0)==10) {
+        if (i.getIntExtra("key",0)==1) {
             locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
             locationListener = new LocationListener() {
                 @Override
@@ -121,22 +121,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onMapLongClick(LatLng latLng) {
-        Geocoder geocoder=new Geocoder(getApplicationContext(), Locale.getDefault());
-        try {
-            address=geocoder.getFromLocation(latLng.latitude,latLng.longitude,1);
-            if(address!=null&&address.size()!=0){
-                arrayList.add(address.get(0).getCountryName());
-                arrayList.add(address.get(0).getLocality());
-                arrayList.add(address.get(0).getPostalCode());
-                arrayList.add(address.get(0).getAdminArea());
-                arrayList.add(address.get(0).getThoroughfare());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         Location temp=new Location(LocationManager.GPS_PROVIDER);
         temp.setLatitude(latLng.latitude);
         temp.setLongitude(latLng.longitude);
+        meetingLocation=temp;
         mMap.clear();
         centerMapOnLocation(temp,"location choosed");
         Toast.makeText(this, "Go Back! Location Saved", Toast.LENGTH_SHORT).show();

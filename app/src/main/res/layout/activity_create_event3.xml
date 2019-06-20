@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".CreateEvent">
+    tools:context=".CreateEvent3">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             app:spb_animateToCurrentProgressState="true"
             app:spb_checkStateCompleted="true"
             app:spb_currentStateDescriptionColor="#009688"
-            app:spb_currentStateNumber="one"
+            app:spb_currentStateNumber="three"
             app:spb_descriptionLinesSpacing="5dp"
             app:spb_descriptionTopSpaceIncrementer="10dp"
             app:spb_justifyMultilineDescription="true"
@@ -31,42 +31,41 @@
             app:spb_stateNumberBackgroundColor="#808080"
             app:spb_stateNumberForegroundColor="#FFC107" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Who can Participate?"
-                android:textSize="20sp" />
-
-            <Spinner
-                android:id="@+id/CreateEvent_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp" />
-
-        </LinearLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
+
             <EditText
-                android:id="@+id/CreateEvent_upperage"
+                android:id="@+id/CreateEvent_street"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
-                android:hint="@string/upper_age"
+                android:hint="@string/street"
+                android:inputType="textCapWords" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/CreateEvent_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="@string/pin_code"
                 android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
 
@@ -75,15 +74,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
+
             <EditText
-                android:id="@+id/CreateEvent_lowerage"
+                android:id="@+id/CreateEvent_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
-                android:hint="@string/lower_age"
-                android:inputType="number" />
+                android:hint="@string/city"
+                android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -91,15 +92,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
+
             <EditText
-                android:id="@+id/CreateEvent_memberslimit"
+                android:id="@+id/CreateEvent_state"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
-                android:hint="@string/members_limit"
-                android:inputType="number" />
+                android:hint="@string/state"
+                android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -107,27 +110,58 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
+
             <EditText
-                android:id="@+id/CreateEvent_name"
+                android:id="@+id/CreateEvent_country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:ems="10"
-                android:hint="@string/name_of_event_ex_cricket"
+                android:hint="@string/country"
+                android:inputType="textCapWords" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/CreateEvent_landmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:ems="10"
+                android:hint="LandMark"
                 android:inputType="textCapWords" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/CreateEvent_next"
+            android:id="@+id/CreateEvent_settime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/choose_meeting_point_on_map"
+            android:onClick="onClickMeetingPoint"/>
+
+        <Button
+            android:id="@+id/Signup_b_complete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/LightPrimaryColor"
             android:text="Next"
-            android:onClick="onNextClick"/>
+            android:onClick="onClickNext"/>
 
     </LinearLayout>
 </ScrollView>
